@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guruch Hisobi - Katta Boshqaruv Tizimi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      background: #0b1329; 
+      color: #f8fafc;
+    }
+    .glass-card { 
+      background: rgba(18, 28, 51, 0.85); 
+      backdrop-filter: blur(16px); 
+      border: 1px solid rgba(255, 255, 255, 0.08); 
+    }
+    input[type="number"]::-webkit-outer-spin-button, 
+    input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  </style>
+</head>
+<body class="min-h-screen pb-20">
+
+<!-- Header / Profil -->
+<header class="border-b border-slate-800 bg-slate-900/90 sticky top-0 z-50 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <div class="w-11 h-11 bg-gradient-to-tr from-amber-600 to-amber-500 rounded-2xl flex items-center justify-center font-bold text-white text-2xl shadow-lg shadow-amber-900/30">
+        G
+      </div>
+      <div>
+        <h1 class="text-xl font-bold text-white leading-none">GuruchHisob.uz</h1>
+        <p class="text-xs text-slate-400 mt-1">Moliya va Ombor Nazorati Tizimi</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-700/60 rounded-2xl p-2 px-4">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
+        GA
+      </div>
+      <div class="text-left hidden sm:block">
+        <p class="text-sm font-semibold text-slate-200">G'ayrat Erkinov</p>
+        <p class="text-xs text-emerald-400 font-medium">● Bosh Admin</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-6 py-10 space-y-12">
+
+  <!-- OY HISOBOTI FORMASI (QIYMATLARSIZ / BO'SH MAYDONLAR) -->
+  <div class="glass-card rounded-3xl p-8 md:p-10 shadow-2xl">
+    
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-6 border-b border-slate-700/60 gap-4">
+      <div>
+        <h2 class="text-2xl font-bold text-white">Oy Hisoboti Formasi (Iyul 2026)</h2>
+        <p class="text-sm text-slate-400 mt-1">Ma'lumotlarni o'zingiz kiriting (barcha maydonlar bo'sh)</p>
+      </div>
+      <span class="bg-amber-500/10 border border-amber-500/20 text-amber-400 font-semibold px-4 py-2 rounded-xl text-sm">
+        Oylik Tahlil Formasi
+      </span>
+    </div>
+
+    <form action="#" method="POST" class="space-y-12">
+
+      <!-- 1. Asosiy Savdo va Qarzdorlik -->
+      <div>
+        <h3 class="text-md font-semibold text-amber-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+          <span>💵</span> 1. Asosiy Savdo va Qarzdorlik
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 bg-slate-950/50 p-8 rounded-3xl border border-slate-800/80">
+          
+          <div class="text-center">
+            <label for="totalRiceKg" class="block text-slate-400 font-medium text-sm mb-2">Jami sotilgan guruch</label>
+            <input type="number" id="totalRiceKg" name="total_rice_kg" placeholder="0" class="w-full text-5xl font-extrabold text-center bg-transparent border-b-2 border-amber-500/50 text-white pb-2 focus:outline-none focus:border-amber-400 transition-colors">
+            <p class="text-slate-500 text-xs mt-2 font-semibold">kg</p>
+          </div>
+
+          <div class="text-center">
+            <label for="cashSalesSum" class="block text-slate-400 font-medium text-sm mb-2">Naqd savdo</label>
+            <input type="number" id="cashSalesSum" name="cash_sales_sum" placeholder="0" class="w-full text-5xl font-extrabold text-center bg-transparent border-b-2 border-emerald-500/50 text-emerald-400 pb-2 focus:outline-none focus:border-emerald-300 transition-colors">
+            <p class="text-slate-500 text-xs mt-2 font-semibold">so‘m</p>
+          </div>
+
+          <div class="text-center">
+            <label for="creditGivenSum" class="block text-slate-400 font-medium text-sm mb-2">Qarzga berilgan</label>
+            <input type="number" id="creditGivenSum" name="credit_given_sum" placeholder="0" class="w-full text-5xl font-extrabold text-center bg-transparent border-b-2 border-red-500/50 text-red-400 pb-2 focus:outline-none focus:border-red-300 transition-colors">
+            <p class="text-slate-500 text-xs mt-2 font-semibold">so‘m</p>
+          </div>
+
+          <div class="text-center">
+            <label for="creditPaidSum" class="block text-slate-400 font-medium text-sm mb-2">To'langan qarz</label>
+            <input type="number" id="creditPaidSum" name="credit_paid_sum" placeholder="0" class="w-full text-5xl font-extrabold text-center bg-transparent border-b-2 border-emerald-500/50 text-emerald-400 pb-2 focus:outline-none focus:border-emerald-300 transition-colors">
+            <p class="text-slate-500 text-xs mt-2 font-semibold">so‘m</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 2. Guruch Navlari Bo'yicha Sotuv Hujjatlari -->
+      <div>
+        <h3 class="text-md font-semibold text-amber-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+          <span>📦</span> 2. Guruch Navlari Bo'yicha Sotuv Hujjatlari
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center space-y-2">
+            <label for="lazerRiceKg" class="block text-slate-300 font-medium text-sm">Lazer guruchi</label>
+            <input type="number" id="lazerRiceKg" name="lazer_rice_kg" placeholder="0" class="w-full text-4xl font-extrabold text-center bg-transparent border-b-2 border-slate-600 focus:border-amber-500 text-white pb-1 focus:outline-none">
+            <p class="text-xs text-slate-500 mt-1">kg</p>
+          </div>
+
+          <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center space-y-2">
+            <label for="alangaRiceKg" class="block text-slate-300 font-medium text-sm">Alanga guruchi</label>
+            <input type="number" id="alangaRiceKg" name="alanga_rice_kg" placeholder="0" class="w-full text-4xl font-extrabold text-center bg-transparent border-b-2 border-slate-600 focus:border-amber-500 text-white pb-1 focus:outline-none">
+            <p class="text-xs text-slate-500 mt-1">kg</p>
+          </div>
+
+          <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center space-y-2">
+            <label for="devziraRiceKg" class="block text-slate-300 font-medium text-sm">Devzira guruchi</label>
+            <input type="number" id="devziraRiceKg" name="devzira_rice_kg" placeholder="0" class="w-full text-4xl font-extrabold text-center bg-transparent border-b-2 border-slate-600 focus:border-amber-500 text-white pb-1 focus:outline-none">
+            <p class="text-xs text-slate-500 mt-1">kg</p>
+          </div>
+
+          <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center space-y-2">
+            <label for="otherRiceKg" class="block text-slate-300 font-medium text-sm">Boshqa navlar</label>
+            <input type="number" id="otherRiceKg" name="other_rice_kg" placeholder="0" class="w-full text-4xl font-extrabold text-center bg-transparent border-b-2 border-slate-600 focus:border-amber-500 text-white pb-1 focus:outline-none">
+            <p class="text-xs text-slate-500 mt-1">kg</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3. Qo'shimcha Xarajatlar va Sof Foyda -->
+      <div>
+        <h3 class="text-md font-semibold text-amber-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+          <span>📊</span> 3. Qo'shimcha Xarajatlar va Sof Foyda
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-700/50 text-center">
+            <label for="logisticsExpense" class="block text-slate-400 text-sm font-medium mb-2">Yo'l va Logistika xarajati</label>
+            <input type="number" id="logisticsExpense" name="logistics_expense" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-red-500/50 text-red-400 pb-1 focus:outline-none focus:border-red-400">
+            <p class="text-slate-500 text-xs mt-1">so‘m</p>
+          </div>
+
+          <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-700/50 text-center">
+            <label for="rentExpense" class="block text-slate-400 text-sm font-medium mb-2">Ombor va Ijara xarajatlari</label>
+            <input type="number" id="rentExpense" name="rent_expense" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-red-500/50 text-red-400 pb-1 focus:outline-none focus:border-red-400">
+            <p class="text-slate-500 text-xs mt-1">so‘m</p>
+          </div>
+
+          <div class="bg-blue-950/30 p-6 rounded-2xl border border-blue-500/30 text-center">
+            <label for="expectedProfit" class="block text-blue-300 text-sm font-semibold mb-2">Kutilayotgan Sof Foyda</label>
+            <input type="number" id="expectedProfit" name="expected_profit" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-blue-500 text-blue-400 pb-1 focus:outline-none">
+            <p class="text-slate-500 text-xs mt-1">so‘m</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 4. Xodimlar Oyligi va Kommunal To'lovlar -->
+      <div>
+        <h3 class="text-md font-semibold text-amber-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+          <span>👥</span> 4. Xodimlar Oyligi va Kommunal To'lovlar
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-700/50 text-center">
+            <label for="workerSalary" class="block text-slate-400 text-sm font-medium mb-2">Ishchilar Maoshi</label>
+            <input type="number" id="workerSalary" name="worker_salary" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-red-500/50 text-red-400 pb-1 focus:outline-none">
+            <p class="text-slate-500 text-xs mt-1">so‘m</p>
+          </div>
+
+          <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-700/50 text-center">
+            <label for="utilitiesCost" class="block text-slate-400 text-sm font-medium mb-2">Svet, Suv va Kommunal</label>
+            <input type="number" id="utilitiesCost" name="utilities_cost" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-red-500/50 text-red-400 pb-1 focus:outline-none">
+            <p class="text-slate-500 text-xs mt-1">so‘m</p>
+          </div>
+
+          <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-700/50 text-center">
+            <label for="taxExpense" class="block text-slate-400 text-sm font-medium mb-2">Soliqlar va Boshqa Yig'imlar</label>
+            <input type="number" id="taxExpense" name="tax_expense" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-red-500/50 text-red-400 pb-1 focus:outline-none">
+            <p class="text-slate-500 text-xs mt-1">so‘m</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Yetkazib Beruvchilar va Baza Qarzlari -->
+      <div>
+        <h3 class="text-md font-semibold text-amber-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+          <span>🏭</span> 5. Yetkazib Beruvchi (Baza) Bilan Hisob-Kitob
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-700/50 text-center">
+            <label for="supplierDebtTotal" class="block text-slate-400 text-sm font-medium mb-2">Bazadan Olingan Mahsulot Summasi</label>
+            <input type="number" id="supplierDebtTotal" name="supplier_debt_total" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-amber-500/50 text-amber-400 pb-1 focus:outline-none">
+            <p class="text-slate-500 text-xs mt-1">so‘m</p>
+          </div>
+
+          <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-700/50 text-center">
+            <label for="supplierDebtPaid" class="block text-slate-400 text-sm font-medium mb-2">Bazaga To'langan Summa</label>
+            <input type="number" id="supplierDebtPaid" name="supplier_debt_paid" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-emerald-500/50 text-emerald-400 pb-1 focus:outline-none">
+            <p class="text-slate-500 text-xs mt-1">so‘m</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saqlash va Tozalash Tugmalari -->
+      <div class="flex flex-col sm:flex-row justify-end gap-4 pt-6 border-t border-slate-700/60">
+        <button type="reset" class="px-8 py-4 border border-slate-600 rounded-2xl text-slate-300 hover:bg-slate-800 transition font-medium text-sm">
+          Tozalash
+        </button>
+        <button type="submit" class="px-10 py-4 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white rounded-2xl font-semibold text-sm shadow-lg shadow-amber-900/40 transition">
+          💾 Barcha Hisobotlarni Saqlash
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- YANGI SAVDO YOKI QARZ QO'SHISH FORMASI -->
+  <div class="glass-card rounded-3xl p-8 md:p-10 shadow-2xl">
+    <h2 class="text-2xl font-bold text-white mb-8 border-b border-slate-700/60 pb-4">➕ Yangi Savdo / Nasiya Kiritish Formasi</h2>
+    
+    <form action="#" method="POST" class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label for="newClientName" class="block text-sm text-slate-300 mb-2 font-medium">Mijoz Ismi va Familiyasi</label>
+          <input type="text" id="newClientName" name="new_client_name" placeholder="Ism va Familiya" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-amber-500">
+        </div>
+        <div>
+          <label for="newClientPhone" class="block text-sm text-slate-300 mb-2 font-medium">Telefon Raqami</label>
+          <input type="tel" id="newClientPhone" name="new_client_phone" placeholder="+998 90 123 45 67" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-amber-500">
+        </div>
+        <div>
+          <label for="selectRiceType" class="block text-sm text-slate-300 mb-2 font-medium">Guruch Navi</label>
+          <select id="selectRiceType" name="select_rice_type" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-amber-500">
+            <option value="lazer">Lazer Oliy Nav</option>
+            <option value="alanga">Alanga</option>
+            <option value="devzira">Devzira Qizil</option>
+            <option value="beshkalak">Beshkalak</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label for="saleKg" class="block text-sm text-slate-300 mb-2 font-medium">Miqdor (Kg)</label>
+          <input type="number" id="saleKg" name="sale_kg" placeholder="0" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-amber-500">
+        </div>
+        <div>
+          <label for="salePricePerKg" class="block text-sm text-slate-300 mb-2 font-medium">1 Kg Narxi (so'm)</label>
+          <input type="number" id="salePricePerKg" name="sale_price_per_kg" placeholder="0" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-amber-500">
+        </div>
+        <div>
+          <label for="saleTotalAmount" class="block text-sm text-slate-300 mb-2 font-medium">Umumiy Summa (so'm)</label>
+          <input type="number" id="saleTotalAmount" name="sale_total_amount" placeholder="0" class="w-full bg-slate-800/50 border border-slate-700 rounded-2xl px-5 py-4 text-amber-400 font-semibold focus:outline-none">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="paidSumInput" class="block text-sm text-slate-300 mb-2 font-medium">To'langan Summa (Naqd / Karta)</label>
+          <input type="number" id="paidSumInput" name="paid_sum_input" placeholder="0 so'm" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-5 py-4 text-emerald-400 font-semibold focus:outline-none focus:border-emerald-500">
+        </div>
+        <div>
+          <label for="debtSumInput" class="block text-sm text-slate-300 mb-2 font-medium">Qolgan Nasiya (Qarz) Summasi</label>
+          <input type="number" id="debtSumInput" name="debt_sum_input" placeholder="0 so'm" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-5 py-4 text-red-400 font-semibold focus:outline-none focus:border-red-500">
+        </div>
+      </div>
+
+      <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-5 rounded-2xl text-lg font-semibold transition shadow-lg shadow-emerald-900/30">
+        ➕ Savdoni Tizimga Saqlash
+      </button>
+    </form>
+  </div>
+
+  <!-- OMBOR ZAXIRALARI VA QOLDIQ QAYDNOMASI FORMASI -->
+  <div class="glass-card rounded-3xl p-8 md:p-10 shadow-2xl">
+    <h2 class="text-2xl font-bold text-white mb-8 border-b border-slate-700/60 pb-4">🌾 Ombor Zaxiralari (Kg)</h2>
+    <form action="#" method="POST" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center">
+        <label for="stockLazer" class="block text-slate-300 font-medium text-sm mb-2">Lazer Ombor Qoldig'i</label>
+        <input type="number" id="stockLazer" name="stock_lazer" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-slate-600 focus:border-amber-500 text-amber-400 pb-1 focus:outline-none">
+        <p class="text-xs text-slate-500 mt-2">kg</p>
+      </div>
+
+      <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center">
+        <label for="stockAlanga" class="block text-slate-300 font-medium text-sm mb-2">Alanga Ombor Qoldig'i</label>
+        <input type="number" id="stockAlanga" name="stock_alanga" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-slate-600 focus:border-amber-500 text-amber-400 pb-1 focus:outline-none">
+        <p class="text-xs text-slate-500 mt-2">kg</p>
+      </div>
+
+      <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center">
+        <label for="stockDevzira" class="block text-slate-300 font-medium text-sm mb-2">Devzira Ombor Qoldig'i</label>
+        <input type="number" id="stockDevzira" name="stock_devzira" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-slate-600 focus:border-amber-500 text-amber-400 pb-1 focus:outline-none">
+        <p class="text-xs text-slate-500 mt-2">kg</p>
+      </div>
+
+      <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center">
+        <label for="stockBeshkalak" class="block text-slate-300 font-medium text-sm mb-2">Beshkalak Ombor Qoldig'i</label>
+        <input type="number" id="stockBeshkalak" name="stock_beshkalak" placeholder="0" class="w-full text-3xl font-extrabold text-center bg-transparent border-b-2 border-slate-600 focus:border-amber-500 text-amber-400 pb-1 focus:outline-none">
+        <p class="text-xs text-slate-500 mt-2">kg</p>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- MIJOZLAR NASIYA DAFTARI JADVALI -->
+  <div class="glass-card rounded-3xl p-8 md:p-10 shadow-2xl overflow-x-auto">
+    <h2 class="text-2xl font-bold text-white mb-6">📋 Mijozlar Nasiya (Qarz) Daftari</h2>
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="border-b border-slate-700 text-slate-400 text-sm font-medium">
+          <th class="pb-4">Mijoz Ismi</th>
+          <th class="pb-4">Telefon</th>
+          <th class="pb-4">Guruch Navi</th>
+          <th class="pb-4">Hajmi (kg)</th>
+          <th class="pb-4">Umumiy Summa</th>
+          <th class="pb-4">Qolgan Qarz</th>
+          <th class="pb-4">Holati</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-800 text-slate-300 text-sm">
+        <tr>
+          <td class="py-4 font-semibold text-white">Alijon Karimov</td>
+          <td class="py-4">+998 90 123 45 67</td>
+          <td class="py-4">Lazer</td>
+          <td class="py-4">50 kg</td>
+          <td class="py-4">1 100 000 so'm</td>
+          <td class="py-4 text-red-400 font-bold">500 000 so'm</td>
+          <td class="py-4"><span class="bg-red-500/10 text-red-400 border border-red-500/20 px-3 py-1 rounded-full text-xs font-semibold">Qarz bor</span></td>
+        </tr>
+        <tr>
+          <td class="py-4 font-semibold text-white">Otabek Toirov</td>
+          <td class="py-4">+998 91 987 65 43</td>
+          <td class="py-4">Alanga</td>
+          <td class="py-4">120 kg</td>
+          <td class="py-4">2 280 000 so'm</td>
+          <td class="py-4 text-emerald-400 font-bold">0 so'm</td>
+          <td class="py-4"><span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-semibold">To'langan</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BOZOR VA GURUCH OMBORI FOTOGALEREYASI -->
+  <div class="glass-card rounded-3xl p-8 md:p-10 shadow-2xl space-y-6">
+    <div class="border-b border-slate-700/60 pb-4">
+      <h2 class="text-2xl font-bold text-white">🖼️ Bozor va Guruch Ombori Tasvirlari</h2>
+      <p class="text-sm text-slate-400 mt-1">Gurut savdosi, omborxona va mahsulotlar galereyasi</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="overflow-hidden rounded-2xl border border-slate-700/60">
+        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="Guruch Donalari" class="w-full h-56 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 bg-slate-900/80">
+          <p class="text-white font-semibold text-sm">Oliy Nav Guruch Donalari</p>
+          <p class="text-xs text-slate-400">Toza saralangan guruch mahsulotlari</p>
+        </div>
+      </div>
+
+      <div class="overflow-hidden rounded-2xl border border-slate-700/60">
+        <img src="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?auto=format&fit=crop&w=800&q=80" alt="Guruch Qoplari Ombori" class="w-full h-56 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 bg-slate-900/80">
+          <p class="text-white font-semibold text-sm">Guruch Ombori va Qoplar</p>
+          <p class="text-xs text-slate-400">Ulgurji va chakana omborxona zaxirasi</p>
+        </div>
+      </div>
+
+      <div class="overflow-hidden rounded-2xl border border-slate-700/60">
+        <img src="./img/image.png" alt="Bozor va Savdo" class="w-full h-56 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 bg-slate-900/80">
+          <p class="text-white font-semibold text-sm">Guruch Bozori va Maydoni</p>
+          <p class="text-xs text-slate-400">Farg'ona va Xorazm guruch dalalari va bozori</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
